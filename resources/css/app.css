@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+table, tr, th {
+    border: 1px solid black;
+}
+
+table{
+    margin-top: 10px;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.show-button{
+    color: white;
+    background-color: rgb(121, 78, 0);
+}
+.edit-button{
+    color: white;
+    background-color: rgb(2, 55, 80);
+}
+.delete-button{
+    color: white;
+    background-color: rgb(133, 0, 0);
+}
+
+.titulo{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.agregarBoton{
+    height: 40px;
+    width: 100%;
+    color: white;
+    background-color: rgb(6, 156, 6);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.reporte-button{
+    color: white;
+    background-color: rgb(118, 167, 37);
+}
+
+.agregarForm{
+    margin-top: 25px;
+    border: 1px solid black;
+    width: 50%;
+    height: 80vh;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+label{
+    margin-top: 25px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.cancel{
+    background-color: rgb(224, 15, 15);
+    border: 1px solid black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    font-size: larger;
+    margin-top: 25px;
+}
+.submit{
+    background-color: rgb(10, 209, 36);
+    border: 1px solid black;
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-size: larger;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.devolver{
+    background-color: rgb(1, 170, 1);
+    color: white;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#toast-message{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#toast-message.show {
+    animation: slideInUp 0.5s ease forwards;
+}
+
+.barraBusqueda {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px; /* Limita el ancho máximo */
+    border: 1px solid #dfe1e5;
+    border-radius: 24px; /* Bordes redondeados */
+    padding: 10px;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28); /* Sombra sutil */
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 25px;
+}
+
+/* Input de búsqueda estilo Google */
+.inputBusqueda {
+    flex: 1; /* Hace que el input ocupe el mayor espacio */
+    border: none; /* Sin bordes */
+    outline: none; /* Elimina el borde cuando se hace clic */
+    padding: 10px;
+    font-size: 16px;
+    color: #202124;
+    background-color: transparent;
+}
+
+.botonBusqueda {
+    background-color: transparent;
+    border: none;
+    color: #4285f4; 
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.botonBusqueda:hover {
+    color: #0b66c3;
+}
