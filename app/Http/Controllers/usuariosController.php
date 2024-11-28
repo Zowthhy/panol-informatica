@@ -93,7 +93,7 @@ class usuariosController extends Controller
     {
         
         try {
-            // Intentar eliminar la herramienta
+            // Intentar eliminar la computadora
             $usuario->delete();
     
             // Redirigir con mensaje de éxito

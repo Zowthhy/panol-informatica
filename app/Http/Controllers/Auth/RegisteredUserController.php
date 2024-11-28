@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
             event(new Registered($user));
             Auth::login($user);
         
-            return redirect(route('herramientas.index', absolute: false));
+            return redirect(route('computadoras.index', absolute: false));
         
         } catch (QueryException $e) {
             // Si ocurre una violación de restricción de clave única o de clave foránea

@@ -1,28 +1,46 @@
 <x-app-layout>
-    <div class="agregarForm">
-            <h1 class="text-3x1 py-4">usuario creado el:  {{ $usuario -> created_at}}</h1>
-                <a href="{{ route('usuarios.edit', $usuario)}}" class="submit">Editar</a>
-                <form action="{{ route('usuarios.destroy', $usuario) }}" method="POST" onsubmit="return confirmDelete();">
+    <div class="show-container">
+        <div class="show-header">
+            <h1>Usuario creado el: <span>{{ $usuario->created_at }}</span></h1>
+            <div class="show-actions">
+                <a href="{{ route('usuarios.edit', $usuario) }}" class="btn btn-primary">Editar</a>
+                <form action="{{ route('usuarios.destroy', $usuario) }}" method="POST" onsubmit="return confirmDelete();" class="inline-form">
                     @csrf
                     @method('DELETE')
-                    <button class="cancel">borrar</button>
+                    <button type="submit" class="btn btn-danger">Borrar</button>
                 </form>
-
-                    <label for="">Nombre:</label>
-                    {{ Str::words($usuario -> nombre)}}
-                    <label for="">Apellido:</label>
-                    {{ Str::words($usuario -> apellido)}}
-                    <label for="">Email:</label>
-                    {{ Str::words($usuario -> email)}}
-                    <label for="">Curso:</label>
-                    {{ Str::words($usuario -> curso)}}
-                    <br>
-                    <h2>Préstamos: </h2>
-                    <ul>
-                        @foreach($usuario->prestamos as $prestamo)
-                            <li><a href="{{ route('prestamos.show', $prestamo)}}" style="color: rgb(41, 41, 230)">{{ $prestamo->created_at }}</a></li>           
-                        @endforeach
-                    </ul>
+            </div>
+        </div>
+    
+        <div class="details">
+            <div class="detail-item">
+                <label>Nombre:</label>
+                <span>{{ Str::words($usuario->nombre) }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Apellido:</label>
+                <span>{{ Str::words($usuario->apellido) }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Email:</label>
+                <span>{{ Str::words($usuario->email) }}</span>
+            </div>
+            <div class="detail-item">
+                <label>Curso:</label>
+                <span>{{ Str::words($usuario->curso) }}</span>
+            </div>
+        </div>
+    
+        <div class="show-reportes">
+            <h2>Préstamos</h2>
+            <ul>
+                @foreach($usuario->prestamos as $prestamo)
+                    <li>
+                        <a href="{{ route('prestamos.show', $prestamo) }}" class="link">{{ $prestamo->created_at }}</a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 
     <script>

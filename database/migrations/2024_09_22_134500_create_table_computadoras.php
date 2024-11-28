@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('herramientas', function (Blueprint $table) {
+        Schema::create('computadoras', function (Blueprint $table) {
             $table->id();
             $table -> timestamps();
-            $table -> string('estado', 100);
-            $table -> string('tipo_herramienta', 100);
+            $table->longText('estado');
             $table -> boolean('disponible')->default(true);
             $table -> string('codigo_barras', 50)->default('0');
         });
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_herramientas');
+        Schema::dropIfExists('table_computadoras');
     }
 };

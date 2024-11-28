@@ -17,11 +17,11 @@
         <table class="prestamosTable">
             <tr>
                 <th>ID préstamo</th>
-                <th><a style="color: rgb(41, 41, 230)" href="{{ route('prestamos.index') }}" title="Ordenar préstamos por la fecha de creación" class="btn btn-primary">Prestado el</a></th>
-                <th>ID Herramienta</th>
+                <th><a style="color: rgb(41, 41, 230)" href="{{ route('prestamos.index') }}" title="Ordenar préstamos por la fecha de creación" >Prestado el</a></th>
+                <th>ID computadora</th>
                 <th>Encargado</th>
                 <th>Usuario</th>
-                <th><a style="color: rgb(41, 41, 230)" href="{{ route('prestamos.sin-devolucion') }}" title="Mostrar solo préstamos no devueltos" class="btn btn-primary">Devolución</a></th>
+                <th><a style="color: rgb(41, 41, 230)" href="{{ route('prestamos.sin-devolucion') }}" title="Mostrar solo préstamos no devueltos">Devolución</a></th>
                 <th colspan="5">Opciones</th>
             </tr>
             @foreach ($prestamos as $prestamo)
@@ -29,7 +29,7 @@
                 <tr>
                     <th>{{ Str::words($prestamo->id) }}</th>
                     <th>{{ Str::words($prestamo->created_at) }}</th>
-                    <th><a style="color: rgb(41, 41, 230)" href="{{ route('herramientas.show', $prestamo->herramienta->id) }}">{{ $prestamo->herramienta->id }}</a></th>
+                    <th><a style="color: rgb(41, 41, 230)" href="{{ route('computadoras.show', $prestamo->computadora->id) }}">{{ $prestamo->computadora->id }}</a></th>
                     <th>{{ $prestamo->encargado->name }}</th>
                     <th><a style="color: rgb(41, 41, 230)" href="{{ route('usuarios.show', $prestamo->usuario->id) }}">{{ $prestamo->usuario->nombre }} {{ $prestamo->usuario->apellido }}</a></th>
                     @if ($prestamo->devolucion == null)

@@ -158,3 +158,153 @@ label{
 .botonBusqueda:hover {
     color: #0b66c3;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.show-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Cabecera del préstamo */
+.show-header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.show-header h1 span {
+    font-weight: normal;
+    color: #555;
+}
+
+/* Acciones */
+.show-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: rgb(2, 55, 80);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: rgb(2, 40, 58);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-secondary {
+    background-color: rgb(118, 167, 37);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(91, 128, 34);
+}
+
+/* Detalles del préstamo */
+.show-details {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.detail-item {
+    margin-bottom: 10px;
+}
+
+.detail-item label {
+    font-weight: bold;
+    color: #555;
+}
+
+.detail-item span {
+    color: #333;
+}
+
+/* Reportes */
+.show-reportes {
+    margin-top: 20px;
+}
+
+.show-reportes h2 {
+    font-size: 1.25rem;
+    color: 118, 167, 37;
+    margin-bottom: 10px;
+}
+
+.show-reportes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.show-reportes li {
+    margin-bottom: 5px;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.details-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+.details-table th {
+    font-weight: bold;
+    color: #555;
+    width: 40%;
+}
+
+.details-table td {
+    color: #333;
+}
+
+/* Resaltar fila al pasar el ratón */
+.details-table tr:hover {
+    background-color: #f9f9f9;
+}
+

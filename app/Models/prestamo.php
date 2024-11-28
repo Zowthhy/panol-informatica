@@ -9,11 +9,11 @@ class prestamo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_herramienta', 'id_encargado', 'id_usuario', 'devolucion'];
+    protected $fillable = ['id_computadora', 'id_encargado', 'id_usuario', 'devolucion'];
 
-public function herramienta()
+public function computadora()
 {
-    return $this->belongsTo(Herramienta::class, 'id_herramienta');
+    return $this->belongsTo(computadora::class, 'id_computadora');
 }
 
 public function encargado()

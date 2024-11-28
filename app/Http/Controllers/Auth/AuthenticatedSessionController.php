@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
     
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('herramientas');
+            return redirect()->intended('computadoras');
         }
     
         return back()->withErrors([

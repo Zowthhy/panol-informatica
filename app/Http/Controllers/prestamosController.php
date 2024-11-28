@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prestamo;
-use App\Models\Herramienta;
+use App\Models\computadora;
 use Illuminate\Database\QueryException;
 class prestamosController extends Controller
 {
@@ -48,43 +48,43 @@ class prestamosController extends Controller
     public function store(Request $request)
     {
         $data = $request -> validate([
-            'id_herramienta' => ['required', 'integer', 'min:1'],
+            'id_computadora' => ['required', 'integer', 'min:1'],
             'id_encargado' => ['required', 'integer', 'min:1'],
             'id_usuario' => ['required', 'integer', 'min:1']
         ]);
 
-        $herramienta = Herramienta::where('codigo_barras', $data['id_herramienta'])->first();
-        // Verificar si la herramienta está disponible
-        if ($herramienta && $herramienta->disponible == 1) {
+        $computadora = computadora::where('codigo_barras', $data['id_computadora'])->first();
+        // Verificar si la computadora está disponible
+        if ($computadora && $computadora->disponible == 1) {
             // Cambiar el estado de disponibilidad a 0 (no disponible)
-            $data['id_herramienta'] = $herramienta->id;
-            $herramienta->disponible = 0;
-            $herramienta->save();
+            $data['id_computadora'] = $computadora->id;
+            $computadora->disponible = 0;
+            $computadora->save();
             $prestamo = Prestamo::create($data);
             return to_route('prestamos.show', $prestamo)->with('success', 'Prestamo creado');
         } else {
-            return back()->with('error', 'La herramienta no está disponible.');
+            return back()->with('error', 'La computadora no está disponible.');
         }
     }
 
     public function storeSinCB(Request $request)
     {
         $data = $request -> validate([
-            'id_herramienta' => ['required', 'integer', 'min:1'],
+            'id_computadora' => ['required', 'integer', 'min:1'],
             'id_encargado' => ['required', 'integer', 'min:1'],
             'id_usuario' => ['required', 'integer', 'min:1']
         ]);
 
-        $herramienta = Herramienta::find($data['id_herramienta']);
-        // Verificar si la herramienta está disponible
-        if ($herramienta && $herramienta->disponible == 1) {
+        $computadora = computadora::find($data['id_computadora']);
+        // Verificar si la computadora está disponible
+        if ($computadora && $computadora->disponible == 1) {
             // Cambiar el estado de disponibilidad a 0 (no disponible)
-            $herramienta->disponible = 0;
-            $herramienta->save();
+            $computadora->disponible = 0;
+            $computadora->save();
             $prestamo = Prestamo::create($data);
             return to_route('prestamos.show', $prestamo)->with('success', 'Prestamo creado');
         } else {
-            return back()->with('error', 'La herramienta no está disponible.');
+            return back()->with('error', 'La computadora no está disponible.');
         }
     }
     /**
@@ -110,7 +110,7 @@ class prestamosController extends Controller
     public function update(Request $request, Prestamo $prestamo)
     {
         $data = $request -> validate([
-            'id_herramienta' => ['required', 'integer', 'min:1'],
+            'id_computadora' => ['required', 'integer', 'min:1'],
             'id_encargado' => ['required', 'integer', 'min:1'],
             'id_usuario' =>['required', 'integer', 'min:1']
         ]);
@@ -126,7 +126,7 @@ class prestamosController extends Controller
     {
         
         try {
-            // Intentar eliminar la herramienta
+            // Intentar eliminar la computadora
             $prestamo->delete();
     
             // Redirigir con mensaje de éxito
@@ -150,11 +150,11 @@ class prestamosController extends Controller
 
         $prestamo->save();
 
-        $herramienta = Herramienta::find($prestamo -> id_herramienta);
-        $herramienta->disponible = 1;
-        $herramienta->save();
+        $computadora = computadora::find($prestamo -> id_computadora);
+        $computadora->disponible = 1;
+        $computadora->save();
 
-        return to_route('prestamos.index')->with('success','La herramienta fue devuelta');
+        return to_route('prestamos.index')->with('success','La computadora fue devuelta');
     }
     public function buscar(Request $request)
     {

@@ -6,12 +6,12 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('herramientas.index') }}">
+                    <a href="{{ route('computadoras.index') }}">
                         <img src="{{ asset('images/chacalogo.jpg') }}" alt="logo" class="h-12 m-4">
                     </a>
                 </div>
                 <div class="shrink-0 flex items-center">
-                    Pañol   E.E.S.T. N°6
+                    Pañol Informática  E.E.S.T. N°6
                 </div>
 
                 <!-- Links de navegacion -->
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('herramientas.index')" :active="request()->routeIs('herramientas.index')">
+                    <x-nav-link :href="route('computadoras.index')" :active="request()->routeIs('computadoras.index')">
                         {{ __('Inventario') }}
                     </x-nav-link>
                 </div>

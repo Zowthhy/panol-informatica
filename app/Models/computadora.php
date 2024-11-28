@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class herramienta extends Model
+class computadora extends Model
 {
     use HasFactory;
-    protected $fillable = ['estado', 'tipo_herramienta', 'codigo_barras', 'disponible'];
+    protected $fillable = ['estado', 'codigo_barras', 'disponible'];
 }

@@ -9,8 +9,8 @@
             <div class="titulo">
                 <h1>Agregar préstamo</h1>
             </div>
-            <label for="id_herramienta">Herramienta:</label>
-            <input name="id_herramienta" type="text" placeholder="ID de herramienta" required> 
+            <label for="id_computadora">computadora:</label>
+            <input name="id_computadora" type="text" placeholder="ID de computadora" required> 
 
             <label for="id_encargado">Encargado:</label>
             <input type="text" value="{{ Auth::user()->name }}" readonly>

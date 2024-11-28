@@ -13,9 +13,9 @@
                 <h1 class="text-3x1 py-4">Editar prestamo</h1>
             </div>
 
-            <label for="id_herramienta">Herramienta:</label>
-            <select name="id_herramienta" id="id_herramienta" class="select2">
-                <option value="">Seleccione una herramienta</option>
+            <label for="id_computadora">computadora:</label>
+            <select name="id_computadora" id="id_computadora" class="select2">
+                <option value="">Seleccione una computadora</option>
             </select>
             
                 <label for="estado">Encargado:</label>
@@ -40,10 +40,10 @@
 
     <script>
         $(document).ready(function() {
-            // Inicializar Select2 para herramientas
-            $('#id_herramienta').select2({
+            // Inicializar Select2 para computadoras
+            $('#id_computadora').select2({
                 ajax: {
-                    url: '{{ route('buscar.herramientas') }}',
+                    url: '{{ route('buscar.computadoras') }}',
                     dataType: 'json',
                     delay: 250,
                     data: function (params) {

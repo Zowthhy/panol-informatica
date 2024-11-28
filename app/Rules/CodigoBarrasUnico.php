@@ -2,7 +2,7 @@
 
 namespace App\Rules;
 use Illuminate\Contracts\Validation\Rule;
-use App\Models\Herramienta;
+use App\Models\computadora;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
@@ -16,7 +16,7 @@ class CodigoBarrasUnico implements Rule
         }
 
         // Aquí validamos si el código de barras ya existe en la base de datos
-        $existe = Herramienta::where('codigo_barras', $value)->exists();
+        $existe = computadora::where('codigo_barras', $value)->exists();
 
         // Si ya existe, devolvemos false
         return !$existe;
